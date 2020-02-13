@@ -4,8 +4,8 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 
 export const ROUTES: Routes = [
-  { path: 'app-friends-login', component: LoginComponent },
-  { path: 'app-friends-signup', component: SignupComponent }
+  { path: 'login', component: LoginComponent },
+  { path: 'signup', component: SignupComponent }
 ];
 
 /**
