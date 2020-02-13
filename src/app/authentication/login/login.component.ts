@@ -59,7 +59,12 @@ export class LoginComponent implements OnInit {
 		this.userService.getUser(uid)
 			.subscribe(snapshot => {
 				this.user = snapshot;
+				this.navigateToUserProfile();
 			});
+	}
+
+	private navigateToUserProfile() {
+		this.router.navigateByUrl('/profile');
 	}
 
 }
