@@ -15,12 +15,14 @@ import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { FriendsDatePipe } from './pipes/friends-date.pipe';
+import { NotFoundComponent } from './not-found/not-found.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
-    FriendsDatePipe
+    FriendsDatePipe,
+    NotFoundComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +31,8 @@ import { FriendsDatePipe } from './pipes/friends-date.pipe';
     AngularFireModule.initializeApp(environment.firebase),
     BrowserAnimationsModule,
     RouterModule.forRoot([]),
-    AuthenticationModule
+    AuthenticationModule, 
+    AppRouting
   ],
   providers: [AngularFireAuth, AngularFireDatabase],
   bootstrap: [AppComponent]

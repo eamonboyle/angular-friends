@@ -1,10 +1,20 @@
 import { Component } from '@angular/core';
+import { AuthenticationService } from './services/authentication.service';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.scss']
+	selector: 'app-root',
+	templateUrl: './app.component.html',
+	styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'friends';
+
+	authenticationService: AuthenticationService;
+
+	constructor(
+		private authService: AuthenticationService
+	) {
+		this.authenticationService = authService;
+	}
+
+	title = 'friends';
 }

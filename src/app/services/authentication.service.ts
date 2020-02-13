@@ -8,18 +8,23 @@ import { AngularFireAuth } from 'angularfire2/auth';
 @Injectable()
 export class AuthenticationService {
 
-	constructor(private auth: AngularFireAuth) { }
+	constructor(private angularFireAuth: AngularFireAuth) { }
 
 	public signup(email: string, password: string): Promise<any> {
-		return this.auth.auth.createUserWithEmailAndPassword(email, password);
+		return this.angularFireAuth.auth.createUserWithEmailAndPassword(email, password);
 	}
 
 	public login(email: string, password: string): Promise<any> {
-		return this.auth.auth.signInWithEmailAndPassword(email, password);
+		return this.angularFireAuth.auth.signInWithEmailAndPassword(email, password);
 	}
 
 	public resetPassword(email: string): Promise<any> {
-		return this.auth.auth.sendPasswordResetEmail(email);
+		return this.angularFireAuth.auth.sendPasswordResetEmail(email);
+	}
+
+	public isAuthenticated(): boolean {
+		const user = this.angularFireAuth.auth.currentUser;
+		return user ? true : false;
 	}
 
 }
