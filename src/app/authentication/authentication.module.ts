@@ -8,12 +8,16 @@ import { SignupComponent } from './signup/signup.component';
 
 import { AuthenticationService } from '../services/authentication.service';
 import { UserService } from '../services/user.service';
+import { PasswordEqualValidator } from '../utils/password-equal-validator.directive';
+import { ErrorAlertComponent } from '../shared/error-alert/error-alert.component';
 
 
 @NgModule({
   declarations: [
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    PasswordEqualValidator, 
+    ErrorAlertComponent
   ],
   imports: [
     CommonModule,
