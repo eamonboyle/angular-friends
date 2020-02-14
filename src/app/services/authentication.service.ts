@@ -27,4 +27,8 @@ export class AuthenticationService {
 		return user ? true : false;
 	}
 
+	public signOut() {
+		return this.angularFireAuth.auth.signOut();
+	}
+
 }

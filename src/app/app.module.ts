@@ -16,13 +16,14 @@ import { RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { FriendsDatePipe } from './pipes/friends-date.pipe';
 import { NotFoundComponent } from './not-found/not-found.component';
+import { UserModule } from './user/user.module';
 
 @NgModule({
   declarations: [
     AppComponent,
     AboutComponent,
     FriendsDatePipe,
-    NotFoundComponent
+    NotFoundComponent,
   ],
   imports: [
     CommonModule,
@@ -32,7 +33,8 @@ import { NotFoundComponent } from './not-found/not-found.component';
     BrowserAnimationsModule,
     RouterModule.forRoot([]),
     AuthenticationModule, 
-    AppRouting
+    AppRouting,
+    UserModule
   ],
   providers: [AngularFireAuth, AngularFireDatabase],
   bootstrap: [AppComponent]

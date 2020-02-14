@@ -5,7 +5,7 @@ import { NotFoundComponent } from './not-found/not-found.component';
 
 export const ROUTES: Routes = [
   { path: 'about', component: AboutComponent, pathMatch: 'full' },
-  { path: '**', component: NotFoundComponent },
+  {path: '**', redirectTo: 'app-not-found'},
 ];
 
 @NgModule({
