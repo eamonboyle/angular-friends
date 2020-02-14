@@ -5,6 +5,8 @@ import { FormsModule } from '@angular/forms';
 import { UserRoutingModule } from './user-routing.module';
 import { UserProfileComponent } from './user-profile/user-profile.component';
 import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
+import { UserFriendsComponent } from './user-friends/user-friends.component';
+import { FriendsDatePipe } from '../pipes/friends-date.pipe';
 
 @NgModule({
   imports: [
@@ -13,8 +15,10 @@ import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
     FormsModule
   ],
   declarations: [
-    UserProfileComponent, 
-    EditDialogComponent
+    UserProfileComponent,
+    EditDialogComponent,
+    UserFriendsComponent,
+    FriendsDatePipe,
   ]
 })
 export class UserModule { }

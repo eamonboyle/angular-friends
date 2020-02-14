@@ -14,7 +14,6 @@ import { AngularFireDatabase } from 'angularfire2/database';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
-import { FriendsDatePipe } from './pipes/friends-date.pipe';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { UserModule } from './user/user.module';
 
@@ -22,7 +21,6 @@ import { UserModule } from './user/user.module';
   declarations: [
     AppComponent,
     AboutComponent,
-    FriendsDatePipe,
     NotFoundComponent,
   ],
   imports: [
