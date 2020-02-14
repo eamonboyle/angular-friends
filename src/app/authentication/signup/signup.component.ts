@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthenticationService } from '../../services/authentication.service';
 import { User } from 'src/app/services/user';
 import { UserService } from 'src/app/services/user.service';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-signup',
@@ -16,7 +17,8 @@ export class SignupComponent implements OnInit {
 
 	constructor(
 		private authService: AuthenticationService,
-		private userService: UserService
+		private userService: UserService,
+		private router: Router
 	) { }
 
 	ngOnInit() {
@@ -35,14 +37,19 @@ export class SignupComponent implements OnInit {
 				);
 				
 				this.writeNewUser(user);
+				this.navigateToUserProfile();
 			}).catch((error) => {
 				this.showError = true;
 				this.errorMessage = error
 			})
 	}
 
-	writeNewUser(user: User): void {
+	private writeNewUser(user: User): void {
 		this.userService.addUser(user);
+	}
+
+	private navigateToUserProfile() {
+		this.router.navigateByUrl('/profile');
 	}
 
 }

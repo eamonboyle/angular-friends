@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { AuthenticationService } from 'src/app/services/authentication.service';
 import { UserService } from 'src/app/services/user.service';
 import { Router } from '@angular/router';
@@ -10,7 +10,7 @@ import { AngularFireAuth } from 'angularfire2/auth';
 	templateUrl: './login.component.html',
 	styleUrls: ['./login.component.scss']
 })
-export class LoginComponent implements OnInit {
+export class LoginComponent {
 
 	showError: boolean;
 	errorMessage: string;
@@ -27,9 +27,6 @@ export class LoginComponent implements OnInit {
 				this.getUserInfo(user.uid);
 			}
 		});
-	}
-
-	ngOnInit() {
 	}
 
 	onLogin(loginFormData): void {
@@ -59,6 +56,7 @@ export class LoginComponent implements OnInit {
 		this.userService.getUser(uid)
 			.subscribe(snapshot => {
 				this.user = snapshot;
+				this.userService.saveUser(this.user)
 				this.navigateToUserProfile();
 			});
 	}

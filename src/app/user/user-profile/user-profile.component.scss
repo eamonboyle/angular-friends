@@ -1,8 +1,49 @@
-.user-profile {
+.user-profile{
   width: 50%;
   margin-left: 24px;
   margin-top: 10px;
-  .user-profile-btn {
-    margin-top: 20px;
+  .user-profile-name{
+      text-align: left;
+      margin-top: 10px;
+      &-value{
+          display: inline-block;
+          margin-left: 10px;
+      }
+      &-btn{
+          margin-left: 100px;
+      }
+  }
+  .user-profile-email{
+      text-align: left;
+      margin-top: 20px;
+      &-value{
+          display: inline-block;
+          margin-left: 10px;
+      }
+  }
+  .user-profile-mobile{
+      text-align: left;
+      margin-top: 20px;
+      &-value{
+          display: inline-block;
+          margin-left: 10px;
+      }
+      &-btn{
+          margin-left: 110px;
+      }
+  }
+  .user-profile-password{
+      text-align: left;
+      margin-top: 20px;
+      &-value{
+          display: inline-block;
+          margin-left: 10px;
+      }
+      &-btn{
+          margin-left: 154px;
+      }
+  }
+  .user-profile-btn{
+      margin-top: 20px;
   }
 }
