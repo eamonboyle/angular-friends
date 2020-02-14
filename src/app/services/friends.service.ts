@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase } from 'angularfire2/database';
 import { Observable } from 'rxjs';
-import 'rxjs/add/operator/map';
 import { Friend } from './friend';
 import { FRIENDS_CHILD, USER_DETAILS_CHILD } from './database-constants';
 

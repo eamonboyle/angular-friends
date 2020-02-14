@@ -7,6 +7,7 @@ import { UserProfileComponent } from './user-profile/user-profile.component';
 import { EditDialogComponent } from '../edit-dialog/edit-dialog.component';
 import { UserFriendsComponent } from './user-friends/user-friends.component';
 import { FriendsDatePipe } from '../pipes/friends-date.pipe';
+import { FriendsService } from '../services/friends.service';
 
 @NgModule({
   imports: [
@@ -19,6 +20,9 @@ import { FriendsDatePipe } from '../pipes/friends-date.pipe';
     EditDialogComponent,
     UserFriendsComponent,
     FriendsDatePipe,
+  ],
+  providers: [
+    FriendsService
   ]
 })
 export class UserModule { }
