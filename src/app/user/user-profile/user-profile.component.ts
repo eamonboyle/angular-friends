@@ -69,4 +69,10 @@ export class UserProfileComponent implements OnInit {
 			.setEditType(EditType.PASSWORD)
 			.show();
 	}
+
+	onPersonEdit(event) {
+		const selectedFiles: FileList = event.target.files;
+		const file = selectedFiles.item(0);
+		this.userService.addProfileImage(this.user, file);
+	}
 }

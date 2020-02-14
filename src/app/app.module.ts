@@ -11,6 +11,7 @@ import { environment } from '../environments/environment';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularFireAuth } from 'angularfire2/auth';
 import { AngularFireDatabase } from 'angularfire2/database';
+import { AngularFireStorage } from 'angularfire2/storage';
 import { CommonModule } from '@angular/common';
 import { RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
@@ -34,7 +35,7 @@ import { UserModule } from './user/user.module';
     AppRouting,
     UserModule
   ],
-  providers: [AngularFireAuth, AngularFireDatabase],
+  providers: [AngularFireAuth, AngularFireDatabase, AngularFireStorage],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
