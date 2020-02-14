@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
 		private userService: UserService,
 		private router: Router,
 		private angularFireAuth: AngularFireAuth
-	) { 
+	) {
 		this.angularFireAuth.auth.onAuthStateChanged(user => {
 			if (user) {
 				this.getUserInfo(user.uid);
