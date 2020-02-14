@@ -31,6 +31,13 @@ export class UserService {
 		return this.subject;
 	}
 
+	public updateName(user: User, name:string): void {
+		this.fireDb.object(`${USERS_CHILD}/${user.uid}`).update({
+			name: name
+		});
+		this.saveUser(user);
+	}
+
 	public updateEmail(user: User, email: string): void {
 		this.fireDb.object(`${USERS_CHILD}/${user.uid}`).update({
 			email: email
