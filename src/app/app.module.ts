@@ -17,6 +17,7 @@ import { RouterModule } from '@angular/router';
 import { AboutComponent } from './about/about.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { UserModule } from './user/user.module';
+import { ChatModule } from './chat/chat.module';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { UserModule } from './user/user.module';
     RouterModule.forRoot([]),
     AuthenticationModule, 
     AppRouting,
-    UserModule
+    UserModule,
+    ChatModule
   ],
   providers: [AngularFireAuth, AngularFireDatabase, AngularFireStorage],
   bootstrap: [AppComponent]

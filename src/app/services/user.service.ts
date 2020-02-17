@@ -76,5 +76,8 @@ export class UserService {
 			});
 	}
 
+	public deleteFile() {
+		this.fireStorage.ref('images/claire.jpg').delete();
+	}
 
 }
