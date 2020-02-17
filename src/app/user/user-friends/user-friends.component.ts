@@ -3,6 +3,7 @@ import { UserService } from '../../services/user.service';
 import { FriendsService } from '../../services/friends.service';
 import { User } from '../../services/user';
 import { Friend } from 'src/app/services/friend';
+import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-user-friends',
@@ -22,7 +23,8 @@ export class UserFriendsComponent implements OnInit {
 
 	constructor(
 		private userService: UserService,
-		private friendService: FriendsService
+		private friendService: FriendsService,
+		private router: Router
 	) { }
 
 	ngOnInit() {
@@ -69,6 +71,10 @@ export class UserFriendsComponent implements OnInit {
 		this.currentCount = count;
 		this.leftArrowVisible();
 		this.rightArrowVisible();
+	}
+
+	onChat(id: string): void {
+		this.router.navigate(['/chat', id]);
 	}
 
 }

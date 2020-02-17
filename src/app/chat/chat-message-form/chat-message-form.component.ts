@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { MessageService } from 'src/app/services/message.service';
 import { UserService } from 'src/app/services/user.service';
+import { Message } from 'src/app/services/message';
 
 @Component({
   selector: 'app-chat-message-form',
@@ -23,7 +24,13 @@ export class ChatMessageFormComponent implements OnInit {
   }
 
   sendMessage() {
-    console.log('Send chat message');
+    const message: Message = new Message(
+      this.newMessage, 
+      this.uid,
+      this.friendUid,
+      Date.now()
+    );
+    this.messageService.createNewMessage(message);
   }
 
 }
