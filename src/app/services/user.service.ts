@@ -63,11 +63,12 @@ export class UserService {
 	public addProfileImage(user: User, file: File) {
 		this.fireStorage.ref(`${this.basePath}/${file.name}`).put(file).then(
 			snapshot => {
-				const imageUrl: string = snapshot.downloadURL;
-				this.fireDb.object(`${USERS_CHILD}/${user.uid}`).update({ image: imageUrl });
-				user.image = imageUrl;
-				this.saveUser(user);
-				console.log('Uploaded');
+				// const imageUrl: string = snapshot.downloadURL;
+				snapshot.ref.getDownloadURL().then(imageUrl => {
+					this.fireDb.object(`${USERS_CHILD}/${user.uid}`).update({ image: imageUrl });
+					user.image = imageUrl;
+					this.saveUser(user);
+				});
 
 			}).catch((error) => {
 				const errorMessage = error.message;
