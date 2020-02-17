@@ -26,6 +26,13 @@ export class UserProfileComponent implements OnInit {
 
 	ngOnInit() {
 		this.user = this.userService.getSavedUser().getValue();
+		this.userService.getSavedUser().subscribe(
+			(user) => {
+				if (user.image) {
+					this.profileImage = user.image;
+				}
+			}
+		);
 	}
 
 	onLogout(): void {
