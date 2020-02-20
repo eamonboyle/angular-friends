@@ -1,8 +1,8 @@
-import { PasswordEqualValidatorDirective } from './password-equal-validator.directive';
+import { PasswordEqualValidator } from './password-equal-validator.directive';
 
-describe('PasswordEqualValidatorDirective', () => {
+describe('PasswordEqualValidator', () => {
   it('should create an instance', () => {
-    const directive = new PasswordEqualValidatorDirective();
+    const directive = new PasswordEqualValidator('Test');
     expect(directive).toBeTruthy();
   });
 });

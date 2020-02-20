@@ -32,7 +32,7 @@ import { ChatModule } from './chat/chat.module';
     AngularFireModule.initializeApp(environment.firebase),
     BrowserAnimationsModule,
     RouterModule.forRoot([]),
-    AuthenticationModule, 
+    AuthenticationModule,
     AppRouting,
     UserModule,
     ChatModule
