@@ -1,0 +1,53 @@
+{
+  "rules": {
+    "user-details": {
+      ".write": "auth != null",
+      ".read": "auth != null"
+    },
+    "message_details": {
+      ".read": "auth != null",
+      "$identifierKey": {
+        "$messageKey": {
+          ".write": "auth != null && newData.exists()",
+          ".validate": "newData.hasChildren(['message', 'receiverUid', 'senderUid', 'timestamp'])",
+          "message": {
+            ".validate": "newData.isString()"
+          },
+          "receiverUid": {
+            ".validate": "newData.isString()"
+          },
+          "senderUid": {
+            ".validate": "newData.isString()"
+          },
+          "timestamp": {
+            ".validate": "newData.isNumber()"
+          }
+        }
+      }
+    },
+    "users": {
+      ".read": "auth != null",
+      ".indexOn": [
+        "name"
+      ],
+      "$uid": {
+        ".write": "auth != null && $uid === auth.uid",
+        "name": {
+          ".validate": "newData.isString()"
+        },
+        "email": {
+          ".validate": "newData.isString()"
+        },
+        "mobile": {
+          ".validate": "newData.isString()"
+        },
+        "friendcount": {
+          ".validate": "newData.isNumber()"
+        },
+        "image": {
+          ".validate": "newData.isString()"
+        },
+      }
+    }
+  }
+}

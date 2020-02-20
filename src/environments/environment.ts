@@ -5,13 +5,14 @@
 export const environment = {
   production: false,
   firebase: {
-    apiKey: "AIzaSyBvSj-RsnMzleGGFuKkaiQazam4-wNfgT0",
-    authDomain: "angulartutorial-f82eb.firebaseapp.com",
-    databaseURL: "https://angulartutorial-f82eb.firebaseio.com",
-    projectId: "angulartutorial-f82eb",
-    storageBucket: "angulartutorial-f82eb.appspot.com",
-    messagingSenderId: "226230907284",
-    appId: "1:226230907284:web:af9514ad825f3435d09f81"
+    apiKey: "AIzaSyCTGpjkreA1VR1hCKgG2q6nfy40n_4yov0",
+    authDomain: "friends-staging-39c58.firebaseapp.com",
+    databaseURL: "https://friends-staging-39c58.firebaseio.com",
+    projectId: "friends-staging-39c58",
+    storageBucket: "friends-staging-39c58.appspot.com",
+    messagingSenderId: "555481121600",
+    appId: "1:555481121600:web:480b13f31963de4a6430a5",
+    measurementId: "G-6FRNM0QQTK"
   }
 };
 
