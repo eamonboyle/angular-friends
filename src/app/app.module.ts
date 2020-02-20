@@ -18,6 +18,7 @@ import { AboutComponent } from './about/about.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { UserModule } from './user/user.module';
 import { ChatModule } from './chat/chat.module';
+import { FriendsSearchService } from './services/friends-search.service';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { ChatModule } from './chat/chat.module';
     UserModule,
     ChatModule
   ],
-  providers: [AngularFireAuth, AngularFireDatabase, AngularFireStorage],
+  providers: [AngularFireAuth, AngularFireDatabase, AngularFireStorage, FriendsSearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
